@@ -2,6 +2,7 @@
 ; Inspired by Casey Muratori's .emacs file
 
 (global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-S-c") 'compile)
 
 (setq compilation-directory-locked nil)
 (setq my-makescript "./build.sh")
@@ -80,8 +81,15 @@
           (setq CorrespondingFileName (concat BaseFileName ".cpp"))))
     (if CorrespondingFileName (find-file CorrespondingFileName)
       (error "Unable to find a corresponding file")))
+  (defun my-find-corresponding-file-other-window ()
+    "Find the file that corresponds to this one."
+    (interactive)
+    (find-file-other-window buffer-file-name)
+    (my-find-corresponding-file)
+    (other-window -1))
 
   (define-key c++-mode-map [f12] 'my-find-corresponding-file)
+  (define-key c++-mode-map [M-f12] 'my-find-corresponding-file-other-window)
 )
 
 (add-hook 'c-mode-common-hook 'my-c-hook)
