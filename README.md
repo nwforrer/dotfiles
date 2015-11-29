@@ -1,6 +1,6 @@
 # README #
 
-Addition steps needed for i3 configuration.
+Additional steps needed for i3 configuration.
 
 ### Required applications for i3 config ###
 
