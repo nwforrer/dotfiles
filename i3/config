@@ -96,16 +96,31 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+set $monitor1 "DVI-I-0"
+set $monitor2 "DVI-D-0"
+
 set $workspace1 "1 "
 set $workspace2 "2 "
 set $workspace3 "3 "
 set $workspace4 "4 "
 set $workspace5 "5 "
-set $workspace6 "5 "
-set $workspace7 "5 "
-set $workspace8 "5 "
-set $workspace9 "5 "
-set $workspace10 "10 "
+set $workspace6 "6 "
+set $workspace7 "7 "
+set $workspace8 "8 "
+set $workspace9 "9 "
+set $workspace10 "10 "
+
+# Workspace monitors
+workspace $workspace1 output $monitor1
+workspace $workspace2 output $monitor2
+workspace $workspace3 output $monitor1
+workspace $workspace4 output $monitor2
+workspace $workspace5 output $monitor1
+workspace $workspace6 output $monitor2
+workspace $workspace7 output $monitor1
+workspace $workspace8 output $monitor2
+workspace $workspace9 output $monitor1
+workspace $workspace0 output $monitor2
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -182,8 +197,8 @@ hide_edge_borders both
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+		font pango: System San Francisco Display, FontAwesome 11
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        tray_output primary
 		colors {
 			background $bg-color
 			separator #757575
@@ -197,6 +212,17 @@ bar {
 ###########################################################
 ### Custom Configurations
 ###########################################################
+
+# Program workspaces
+assign [class="Firefox"] $workspace2
+assign [class="Steam"] $workspace3
+
+# Floating
+for_window [class="Lxappearance"] floating enable
+for_window [class="Steam"] floating enable
+for_window [class="MarioBros"] floating enable
+for_window [class="Mario"] floating enable
+for_window [class="FlappyDemo"] floating enable
 
 bindsym $mod+shift+x exec i3lock --color "$bg-color"
 
@@ -212,10 +238,18 @@ bindsym XF86AudioMute exec amixer sset Master toggle
 # bindsym XF86AudioPrev exec playerctl previous
 
 # exec_always feh --bg-scale /home/nick/usr/img/bg/binding_dark.png
-exec_always hsetroot -tile ~/usr/img/bg/binding_dark.png &
+exec_always ~/.fehbg &
 
 exec_always xrandr --output DVI-D-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI-0 --off --output DVI-I-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DVI-I-0 --off --output DP-1 --off --output DP-0 --off
 
-exec compton -f
+exec compton -f &
+
+exec numlockx &
+
+exec xsetroot -cursor-name left_ptr &
+
+exec xflux -z 27606 &
+
+exec nm-applet &
 
 #exec_always xrdb -load ~/.Xresources

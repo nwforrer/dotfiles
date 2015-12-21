@@ -1,11 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/nick/.config/sxhkd'
-let g:netrw_dirhist_2='/home/nick/src/java/test-makefile'
-let g:netrw_dirhist_3='/home/nick/src/java/test-makefile/src'
-let g:netrw_dirhist_4='/home/nick/src/java/test-makefile/src/com'
-let g:netrw_dirhist_5='/home/nick/src/java/test-makefile/src/com/test'
-let g:netrw_dirhist_6='/home/nick/src/java/test-makefile/src/com/test/example'
-let g:netrw_dirhist_7='/home/nick/src/java/test-makefile/src/com/test'
-let g:netrw_dirhist_8='/home/nick/.config/i3'
-let g:netrw_dirhist_9='/home/nick/src/js/flapper-news/.git'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/nick/src/cpp/asteroids/build'
