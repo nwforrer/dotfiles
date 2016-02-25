@@ -120,6 +120,9 @@ inoremap <esc> <nop>
 
 nnoremap <leader><c-n> :NERDTreeToggle<cr>
 
+" Open Terminator in the current buffers directory
+nnoremap <leader>t :silent !terminator --working-directory=%:h<cr>
+
 "nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
 
 
