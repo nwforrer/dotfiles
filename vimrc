@@ -112,6 +112,8 @@ nnoremap L $
 inoremap jk <esc>
 inoremap <esc> <nop>
 
+nnoremap <leader><c-n> :NERDTreeToggle<cr>
+
 "nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
 
 
