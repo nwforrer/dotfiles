@@ -112,6 +112,9 @@ nnoremap L $
 inoremap jk <esc>
 inoremap <esc> <nop>
 
+"nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
+
+
 " }}}
 
 " Abbreviations -------------- {{{
@@ -182,5 +185,25 @@ set statusline+=/	" Separator
 set statusline+=%L	" Total lines
 set statusline+=,	" Separator
 set statusline+=%c	" Column number
+
+" }}}
+
+" Functions ------------------------------------ {{{
+
+nnoremap <leader>q :call <SID>QuickFixToggle()<cr>
+
+let g:quickfix_is_open = 0
+
+function! s:QuickFixToggle()
+	if g:quickfix_is_open
+		cclose
+		let g:quickfix_is_open = 0
+		execute g:quickfix_return_to_window . "wincmd w"
+	else
+		let g:quickfix_return_to_window = winnr()
+		copen
+		let g:quickfix_is_open = 1
+	endif
+endfunction
 
 " }}}

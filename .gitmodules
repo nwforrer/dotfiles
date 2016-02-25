@@ -1,0 +1,3 @@
+[submodule "vim/bundle/potion"]
+	path = vim/bundle/potion
+	url = git@bitbucket.org:nwforrer/vim-potion.git
