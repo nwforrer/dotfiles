@@ -77,10 +77,16 @@ let mapleader = ","
 " Mappings ---------------------------------- {{{
 
 " Ctrl+kjhl navigation between windows
-map <C-J> <C-W>j
-map <C-K> <C-W>k
-map <C-H> <C-W>h
-map <C-L> <C-W>l
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-H> <C-W>h
+nnoremap <C-L> <C-W>l
+
+" Ctrl+Alt+kjhl navigation and expansion between windows
+nnoremap <C-A-J> <C-W>j<C-W>_
+nnoremap <C-A-K> <C-W>k<C-W>_
+nnoremap <C-A-H> <C-W>h<C-W>_
+nnoremap <C-A-L> <C-W>l<C-W>_
 
 " Set F4 to compile program (can set makeprg in individual project .vimrc's)
 nnoremap <F4> :make!<cr>
@@ -111,6 +117,14 @@ nnoremap L $
 " Use jk to escape to normal mode
 inoremap jk <esc>
 inoremap <esc> <nop>
+
+nnoremap <leader><c-n> :NERDTreeToggle<cr>
+
+" Open Terminator in the current buffers directory
+nnoremap <leader>t :silent !terminator --working-directory=%:h<cr>
+
+"nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
+
 
 " }}}
 
@@ -182,5 +196,25 @@ set statusline+=/	" Separator
 set statusline+=%L	" Total lines
 set statusline+=,	" Separator
 set statusline+=%c	" Column number
+
+" }}}
+
+" Functions ------------------------------------ {{{
+
+nnoremap <leader>q :call <SID>QuickFixToggle()<cr>
+
+let g:quickfix_is_open = 0
+
+function! s:QuickFixToggle()
+	if g:quickfix_is_open
+		cclose
+		let g:quickfix_is_open = 0
+		execute g:quickfix_return_to_window . "wincmd w"
+	else
+		let g:quickfix_return_to_window = winnr()
+		copen
+		let g:quickfix_is_open = 1
+	endif
+endfunction
 
 " }}}
