@@ -51,7 +51,10 @@ augroup vimrc_autocmds
 augroup END
 
 " Use HTML syntax for EJS files
-autocmd BufNewFile,BufRead *.ejs set syntax=html
+augroup syntax_filetypes
+	autocmd!
+	autocmd BufNewFile,BufRead *.ejs set syntax=html
+augroup END
 
 set wrap
 
