@@ -14,8 +14,9 @@ if has('gui_running')
 
 	set guifont=Hack\ 11
 
-	" remove the toolbar
+	" remove the menu and toolbar
 	set guioptions-=T
+	set guioptions-=m
 endif
 
 " }}}
@@ -51,7 +52,10 @@ augroup vimrc_autocmds
 augroup END
 
 " Use HTML syntax for EJS files
-autocmd BufNewFile,BufRead *.ejs set syntax=html
+augroup syntax_filetypes
+	autocmd!
+	autocmd BufNewFile,BufRead *.ejs set syntax=html
+augroup END
 
 set wrap
 
@@ -121,7 +125,7 @@ inoremap <esc> <nop>
 nnoremap <leader><c-n> :NERDTreeToggle<cr>
 
 " Open Terminator in the current buffers directory
-nnoremap <leader>t :silent !terminator --working-directory=%:h<cr>
+nnoremap <leader>t :silent !terminator --working-directory=%:h &<cr>
 
 "nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
 
@@ -142,6 +146,9 @@ iabbrev ssig -- <cr>Nick Forrer<cr>nwforrer@gmail.com
 
 " Insert .h include guard with ifndefh
 iabbrev ifndefh #ifndef <c-r>=expand("%:t:r")<cr>_h<leader><c-u><cr>#define <c-r>=expand("%:t:r")<cr>_h<leader><c-u><cr><cr><cr><cr>#endifjkkki
+
+" Insert GPL copyright notice
+iabbrev gplcc /* Foobar.<cr>Copyright (C) 2016<cr>Nick Forrer <nwforrer@gmail.com><cr>This file is part of the Foobar program.<cr><cr>Foobar is free software: you can redistribute it and/or modify<cr>it under the terms of the GNU General Public License as published by<cr>the Free Software Foundation, either version 3 of the License, or<cr>(at your option) any later version.<cr>Foobar is distributed in the hope that it will be useful,<cr>but WITHOUT ANY WARRANTY; without even the implied warranty of<cr>MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the<cr>GNU General Public License for more details.<cr><cr>You should have received a copy of the GNU General Public License<cr>along with Foobar.  If not, see <http://www.gnu.org/licenses/>.<cr>*/<cr>jk
 
 " }}}
 
