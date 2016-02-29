@@ -14,8 +14,9 @@ if has('gui_running')
 
 	set guifont=Hack\ 11
 
-	" remove the toolbar
+	" remove the menu and toolbar
 	set guioptions-=T
+	set guioptions-=m
 endif
 
 " }}}
