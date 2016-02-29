@@ -141,7 +141,7 @@ iabbrev @@ nwforrer@gmail.com
 iabbrev ssig -- <cr>Nick Forrer<cr>nwforrer@gmail.com
 
 " Insert .h include guard with ifndefh
-iabbrev ifndefh #ifndef <c-r>=expand("%:t:r")<cr>_h<leader><c-u><cr>#define <c-r>=expand("%:t:r")<cr>_h<leader><c-u><cr><cr>#endifjkki
+iabbrev ifndefh #ifndef <c-r>=expand("%:t:r")<cr>_h<leader><c-u><cr>#define <c-r>=expand("%:t:r")<cr>_h<leader><c-u><cr><cr><cr><cr>#endifjkkki
 
 " }}}
 
