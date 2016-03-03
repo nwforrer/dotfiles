@@ -145,7 +145,7 @@ iabbrev @@ nwforrer@gmail.com
 iabbrev ssig -- <cr>Nick Forrer<cr>nwforrer@gmail.com
 
 " Insert .h include guard with ifndefh
-iabbrev ifndefh #ifndef <c-r>=expand("%:t:r")<cr>_h<leader><c-u><cr>#define <c-r>=expand("%:t:r")<cr>_h<leader><c-u><cr><cr><cr><cr>#endifjkkki
+iabbrev ifndefh #ifndef <c-r>=expand("%:t:r")<cr>_h<leader><c-u><cr>#define <c-r>=expand("%:t:r")<cr>_h<leader><c-u><cr><cr><cr><cr>#endif /* <c-r>=expand("%:t:r")<cr>_h<leader><c-u> */jkkki
 
 " Insert GPL copyright notice
 iabbrev gplcc /* Foobar.<cr>Copyright (C) 2016<cr>Nick Forrer <nwforrer@gmail.com><cr>This file is part of the Foobar program.<cr><cr>Foobar is free software: you can redistribute it and/or modify<cr>it under the terms of the GNU General Public License as published by<cr>the Free Software Foundation, either version 3 of the License, or<cr>(at your option) any later version.<cr>Foobar is distributed in the hope that it will be useful,<cr>but WITHOUT ANY WARRANTY; without even the implied warranty of<cr>MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the<cr>GNU General Public License for more details.<cr><cr>You should have received a copy of the GNU General Public License<cr>along with Foobar.  If not, see <http://www.gnu.org/licenses/>.<cr>*/<cr>jk
