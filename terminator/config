@@ -35,5 +35,5 @@
     foreground_color = "#C0C5CE"
     palette = "#1B2B34:#EC5f67:#99C794:#FAC863:#6699CC:#C594C5:#5FB3B3:#C0C5CE:#65737E:#EC5f67:#99C794:#FAC863:#6699CC:#C594C5:#5FB3B3:#D8DEE9"
     scrollback_infinite = True
-    show_titlebar = False
+    show_titlebar = True
     use_system_font = False
