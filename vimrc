@@ -180,6 +180,17 @@ augroup filetype_markdown
 	autocmd FileType markdown :onoremap <buffer> ah :<c-u>execute "normal! ?^[==\|--]\\+$\r:nohlsearch\rg_vk0"<cr>
 augroup END
 
+augroup json_autocmd
+	autocmd!
+	autocmd FileType json set autoindent
+	autocmd FileTYpe json set formatoptions=tcq2l
+	autocmd FileTYpe json set textwidth=78 shiftwidth=2
+	autocmd FileTYpe json set softtabstop=2 tabstop=8
+	autocmd FileTYpe json set expandtab
+	autocmd FileTYpe json set foldmethod=syntax
+augroup END
+
+
 " }}}
 
 " Vimscript file settings --------------------- {{{
