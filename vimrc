@@ -182,12 +182,12 @@ augroup END
 
 augroup json_autocmd
 	autocmd!
-	autocmd FileType json set autoindent
-	autocmd FileTYpe json set formatoptions=tcq2l
-	autocmd FileTYpe json set textwidth=78 shiftwidth=2
-	autocmd FileTYpe json set softtabstop=2 tabstop=8
-	autocmd FileTYpe json set expandtab
-	autocmd FileTYpe json set foldmethod=syntax
+	autocmd FileType json setlocal autoindent
+	autocmd FileType json setlocal formatoptions=tcq2l
+	autocmd FileType json setlocal textwidth=78 shiftwidth=2
+	autocmd FileType json setlocal softtabstop=2 tabstop=8
+	autocmd FileType json setlocal expandtab
+	autocmd FileType json setlocal foldmethod=syntax
 augroup END
 
 
