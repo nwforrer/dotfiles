@@ -21,6 +21,14 @@ endif
 
 " }}}
 
+" Plugin settings ------------ {{{
+
+let g:ctrlp_custom_ignore = {
+	\ 'dir': 'target/',
+	\ }
+
+" }}}
+
 " Basic Settings -------------- {{{
 
 if has('vim_starting')
@@ -120,7 +128,7 @@ nnoremap L $
 
 " Use jk to escape to normal mode
 inoremap jk <esc>
-inoremap <esc> <nop>
+"inoremap <esc> <nop>
 
 nnoremap <leader><c-n> :NERDTreeToggle<cr>
 
@@ -189,7 +197,6 @@ augroup json_autocmd
 	autocmd FileType json setlocal expandtab
 	autocmd FileType json setlocal foldmethod=syntax
 augroup END
-
 
 " }}}
 
