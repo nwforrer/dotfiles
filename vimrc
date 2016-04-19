@@ -10,7 +10,8 @@ set background=dark
 if has('gui_running')
 	let base16colorspace=256
 	set t_Co=256
-	colorscheme base16-oceanicnext
+	"colorscheme base16-oceanicnext
+	colorscheme handmade_hero
 
 	set guifont=Hack\ 11
 
@@ -99,6 +100,9 @@ nnoremap <C-A-J> <C-W>j<C-W>_
 nnoremap <C-A-K> <C-W>k<C-W>_
 nnoremap <C-A-H> <C-W>h<C-W>_
 nnoremap <C-A-L> <C-W>l<C-W>_
+
+" Paste with Ctrl-V in insert mode
+inoremap <C-V> <ESC>"+gpi
 
 " Set F4 to compile program (can set makeprg in individual project .vimrc's)
 nnoremap <F4> :make!<cr>
