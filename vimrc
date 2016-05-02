@@ -7,11 +7,13 @@ syntax on
 
 set background=dark
 
+colorscheme molokai
+
 if has('gui_running')
 	let base16colorspace=256
 	set t_Co=256
 	"colorscheme base16-oceanicnext
-	colorscheme handmade_hero
+	"colorscheme handmade_hero
 
 	set guifont=Hack\ 11
 
