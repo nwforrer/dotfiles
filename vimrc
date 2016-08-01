@@ -7,7 +7,7 @@ syntax on
 
 set background=dark
 
-colorscheme molokai
+"colorscheme molokai
 
 if has('gui_running')
 	let base16colorspace=256
