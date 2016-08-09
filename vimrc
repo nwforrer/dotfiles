@@ -103,6 +103,9 @@ nnoremap <C-A-K> <C-W>k<C-W>_
 nnoremap <C-A-H> <C-W>h<C-W>_
 nnoremap <C-A-L> <C-W>l<C-W>_
 
+" Copy to the clipboard
+vnoremap <C-C> :w !xclip -i -sel c<CR><CR>
+
 " Paste with Ctrl-V in insert mode
 inoremap <C-V> <ESC>"+gpi
 
