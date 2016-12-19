@@ -60,6 +60,9 @@ syntax on
 
 nnoremap ; :
 
+" Toggle NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
 " Quickly edit/reload the vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
@@ -71,8 +74,8 @@ nmap Q gqap
 " Easy window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
-map <C-k> <C-w>h
-map <C-h> <C-w>l
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " Clear highlighted searches
 nmap <silent> ,/ :nohlsearch<CR>
