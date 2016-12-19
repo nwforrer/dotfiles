@@ -1,22 +1,73 @@
-*background:#222222
-*foreground:#e8e9ca
 
-*color0:    #222222
-*color1:    #8b3e2f
-*color2:    #526f33
+! --------------------------------
+! Flashy theme
+! --------------------------------
+*background:#1d1d1d
+*foreground:#b3b4b1
+
+*color0:    #1d1d1d
+*color1:    #784742
+*color2:    #427363
 *color3:    #665847
-*color4:    #4a708b
+*color4:    #6a708b
 *color5:    #7a378b
-*color6:    #528b8b
-*color7:    #999999
+*color6:    #52707b
+*color7:    #b3b3b3
 
 *color8:    #4c4c4c
-*color9:    #d75f00
-*color10:   #cee318
-*color11:   #eee685
-*color12:   #9ac0cd
-*color13:   #9f79ee
-*color14:   #79cdcd
-*color15:   #e8e9ca
+*color9:    #d43f10
+*color10:   #cef318
+*color11:   #ede265
+*color12:   #6ac0fd
+*color13:   #ef79ae
+*color14:   #49d4dd
+*color15:   #ffffff
 
-*font: xft:Hack:size=11
+*highlightColor:            #333333
+*highlightTextColor:        #cef318
+
+URxvt*cursorColor:          #ffffff
+URxvt*scrollBar: off
+
+
+! --------------------------------
+! Oceanic theme
+! --------------------------------
+!*background:#222222
+!*foreground:#e8e9ca
+!
+!*color0:    #222222
+!*color1:    #8b3e2f
+!*color2:    #526f33
+!*color3:    #665847
+!*color4:    #4a708b
+!*color5:    #7a378b
+!*color6:    #528b8b
+!*color7:    #999999
+!
+!*color8:    #4c4c4c
+!*color9:    #d75f00
+!*color10:   #cee318
+!*color11:   #eee685
+!*color12:   #9ac0cd
+!*color13:   #9f79ee
+!*color14:   #79cdcd
+!*color15:   #e8e9ca
+
+URxvt.font: xft:Hack:size=14
+!URxvt.font: xft:FontAwesome:pixelsize=11
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #273238, #273238, #1e2529
+rofi.color-normal: #273238, #c1c1c1, #273238, #394249, #ffffff
+rofi.color-active: #273238, #80cbc4, #273238, #394249, #80cbc4
+rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
+
+! Colored man pages
+URxvt.colorIT:              #cacaca
+URxvt.colorBD:              #ede265
+URxvt.colorUL:              #ffffff
+
