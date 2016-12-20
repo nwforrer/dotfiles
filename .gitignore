@@ -1,6 +1,0 @@
-vim/.netrwhist
-*.swp
-
-# For neovim
-vim/.vim
-vim/init.vim
