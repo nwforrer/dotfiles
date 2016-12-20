@@ -1,0 +1,16 @@
+XF86Audio{Prev,Next,Play}
+	playerctl {previous,next,play-pause}
+
+XF86Audio{Raise,Lower}Volume
+	amixer -q set Master 1%{+,-}
+
+XF86AudioMute
+	amixer -q set Master toggle
+
+super+shift+q
+	i3lock --color=2f343f
+
+super+shift+e
+	undock-monitors.sh
+super+shift+control+e
+	check-monitors.sh
