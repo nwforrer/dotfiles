@@ -10,6 +10,12 @@ XF86AudioMute
 super+shift+q
 	i3lock --color=2f343f
 
+super+e
+	rofi -show run -lines 5 -eh 2 -fullscreen -padding 300 -opacity "85" -bw 0 -bc "$back" -bg "$back" -fg "$text" -hlbg "$back" -hlfg "$alt" -font "System San Francisco Display 12"
+
+super+Return
+	urxvt
+
 super+shift+e
 	undock-monitors.sh
 super+shift+control+e

@@ -29,19 +29,8 @@ font pango:System San Francisco 11
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-
 # kill focused window
 bindsym $mod+Shift+semicolon kill
-
-# start dmenu (a program launcher)
-#bindsym $mod+e exec dmenu_run
-bindsym $mod+e exec rofi -show run -lines 5 -eh 2 -fullscreen -padding 300 -opacity "85" -bw 0 -bc "$back" -bg "$back" -fg "$text" -hlbg "$back" -hlfg "$alt" -font "System San Francisco Display 12"
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+h focus left

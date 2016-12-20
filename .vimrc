@@ -12,6 +12,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'rust-lang/rust.vim'
+Plugin 'kovetskiy/sxhkd-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
