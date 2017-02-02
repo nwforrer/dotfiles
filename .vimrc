@@ -11,8 +11,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'rust-lang/rust.vim'
+Plugin 'sheerun/vim-polyglot'
 Plugin 'kovetskiy/sxhkd-vim'
+Plugin 'nvie/vim-togglemouse'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -56,6 +57,23 @@ set pastetoggle=<F2>
 syntax on
 
 "
+" autocommands
+"
+
+augroup filetype_rust
+	autocmd!
+	autocmd FileType rust setlocal makeprg=cargo\ build
+	autocmd FileType rust let b:RunCmd="!cargo\ run"
+augroup end
+
+"
+" functions
+"
+function Date()
+	put =strftime('%c')
+endfunction
+
+"
 " keybindings
 "
 
@@ -67,6 +85,10 @@ map <C-n> :NERDTreeToggle<CR>
 " Quickly edit/reload the vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+" Compilation
+nmap <C-m> :make<CR>
+nmap <C-x> :execute b:RunCmd<CR>
 
 " Use Q for formatting the current paragraph or selection
 vmap Q gq
@@ -83,3 +105,6 @@ nmap <silent> ,/ :nohlsearch<CR>
 
 " With "w!!" use sudo to save file if you forgot to open as root
 cmap w!! w !sudo tee % >/dev/null
+
+" Serch for visually selected text
+vnoremap // y/<C-R>"<CR>
