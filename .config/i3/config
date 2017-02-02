@@ -221,23 +221,27 @@ mode "$mode_gaps_outer" {
 }
 
 #colors
-set $main "#A3A1E3"
-set $alt "#DFADCB"
-set $text "#D5D9FC"
-set $back "#1D2B43"
-set $urgent "#9C8BC6"
+set $bg-color				#2f343f
+set $inactive-bg-color		#2f343f
+set $text-color				#f3f4f5
+set $inactive-text-color	#676E7D
+set $urgent-bg-color		#E53935
 
-#class			border	 backgr	text	indicator child_border
-client.focused		$main	 $back	$text	$main	  $alt	
-client.focused_inactive	$alt	 $back	$text	$alt	  $main
-client.unfocused	$alt	 $back	$text	$alt	  $main
-client.urgent		$urgent	 $back	$text	$alt	  $urgent
-client.placeholder	$back	 $back	$text
-
-client.background	$back 
+#class					border				backgr				text					indicator
+client.focused			$bg-color			$bg-color			$text-color				#00ff00
+client.unfocused		$inactive-bg-color	$inactine-bg-color	$inactive-text-color	#00ff00
+client.focused_inactive $inactive-bg-color	$inactine-bg-color	$inactive-text-color	#00ff00
+client.urgent			$urgent-bg-color	$urgent-bg-color	$text-color				#00ff00
 
 # Custom keybindings
 bindsym $mod+m move workspace to output right
 
+bindsym $mod+e exec rofi -show run -lines 5 -eh 2 -font "System San Francisco Display 12"
+
+bindsym $mod+Shift+q exec i3lock --color=2f343f
+
 # startup apps
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always feh --bg-scale $HOME/Pictures/wallpaper/'Ascent (Final).png'
+
+exec --no-startup-id compton --config ~/.config/compton.conf -b

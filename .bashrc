@@ -9,6 +9,9 @@ if [ -f ~/.cargo/env ]; then
 	. ~/.cargo/env
 fi
 
+# Import colorscheme from 'wal'
+(wal -r &)
+
 # User specific aliases and functions
 
 alias killsql='kill -9 `ps aux | grep sqldeveloper | grep classpath | cut --complement -c1-9 | cut -c1-5`'
