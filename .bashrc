@@ -10,7 +10,7 @@ if [ -f ~/.cargo/env ]; then
 fi
 
 # Import colorscheme from 'wal'
-(wal -r &)
+#(wal -r &)
 
 # User specific aliases and functions
 

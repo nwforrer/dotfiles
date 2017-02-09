@@ -1,10 +1,10 @@
 #!/bin/bash
 
-xsetroot -cursor_name left_ptr &
 xrdb -load ~/.Xresources
-wal -i "$(< "$HOME/.cache/wal/wal")"
 
 function wm() {
+	xsetroot -cursor_name left_ptr &
+	wal -i "$(< "$HOME/.cache/wal/wal")"
 
     xsetroot -name $1
     setxkbmap -layout us -variant dvp & 
@@ -29,4 +29,5 @@ function wm() {
 }
 
 wm i3
+#exec gnome-session
 

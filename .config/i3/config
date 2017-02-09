@@ -82,6 +82,22 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# Hide both edge borders
+hide_edge_borders both
+
+# Set the borders of new windows to 1 pixel
+new_window pixel 1
+
+# Borders for specific apps
+# Asignar bordes a las aplicaciones
+for_window [class="^.*"] border pixel 1
+for_window [class="URxvt"] border pixel 1
+for_window [class="Lxappearance"] border pixel 1
+for_window [class="mpv"] border pixel 0
+for_window [class="Firefox"] border pixel 0
+for_window [class="Geany"] border pixel 0
+for_window [class="Feh"] border pixel 0
+
 set $ws1 "1:"
 set $ws2 "2:"
 set $ws3 "3:"
