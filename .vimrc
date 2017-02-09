@@ -14,6 +14,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'kovetskiy/sxhkd-vim'
 Plugin 'nvie/vim-togglemouse'
+Plugin 'morhetz/gruvbox'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
