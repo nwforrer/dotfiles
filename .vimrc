@@ -15,6 +15,7 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'kovetskiy/sxhkd-vim'
 Plugin 'nvie/vim-togglemouse'
 Plugin 'morhetz/gruvbox'
+Plugin 'craigemery/vim-autotag'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -22,6 +23,10 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 let mapleader=","		" change map leader from \ to ,
+
+let g:ctrlp_custom_ignore = {
+			\ 'dir': '\v[\/](target|\.git)$',
+			\ }
 
 set hidden
 
@@ -70,7 +75,7 @@ augroup end
 "
 " functions
 "
-function Date()
+function! Date()
 	put =strftime('%c')
 endfunction
 
@@ -109,3 +114,6 @@ cmap w!! w !sudo tee % >/dev/null
 
 " Serch for visually selected text
 vnoremap // y/<C-R>"<CR>
+
+" Autocomplete using ctags
+inoremap <C-]> <C-x><C-]>
