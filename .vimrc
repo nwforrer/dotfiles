@@ -8,14 +8,12 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'tpope/vim-fugitive'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'kovetskiy/sxhkd-vim'
-Plugin 'nvie/vim-togglemouse'
-Plugin 'morhetz/gruvbox'
-Plugin 'craigemery/vim-autotag'
+Plugin 'tpope/vim-fugitive' 	" Git
+Plugin 'ctrlpvim/ctrlp.vim'		" Fuzzy search
+Plugin 'scrooloose/nerdtree'	" File tree
+Plugin 'sheerun/vim-polyglot'	" Syntax
+Plugin 'morhetz/gruvbox'		" Colorscheme
+Plugin 'craigemery/vim-autotag'	" Auto-update ctags
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
