@@ -14,7 +14,6 @@ Plugin 'scrooloose/nerdtree'	" File tree
 Plugin 'sheerun/vim-polyglot'	" Syntax
 Plugin 'morhetz/gruvbox'		" Colorscheme
 Plugin 'craigemery/vim-autotag'	" Auto-update ctags
-Plugin 'tpope/vim-surround'		" Surround text
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -24,7 +23,7 @@ filetype plugin indent on    " required
 let mapleader=","		" change map leader from \ to ,
 
 let g:ctrlp_custom_ignore = {
-			\ 'dir': '\v[\/](target|\.git|alf_data_dev|share\/overlays|node_modules)$',
+			\ 'dir': '\v[\/](target|\.git)$',
 			\ }
 
 set hidden
@@ -116,3 +115,4 @@ vnoremap // y/<C-R>"<CR>
 
 " Autocomplete using ctags
 inoremap <C-]> <C-x><C-]>
+
