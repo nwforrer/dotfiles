@@ -1,6 +1,7 @@
 # README #
 
-Additional steps needed for i3 configuration.
+### Installing dotfiles
+Dotfiles are managed using GNU Stow. Install a programs config files by executing `stow <program-name>`.
 
 ### Required applications for i3 config ###
 
@@ -22,8 +23,4 @@ Additional steps needed for i3 configuration.
 ### Icon theme ###
 
 * [Moka](http://samuelhewitt.com/moka/download/moka-icon-theme)
-
-### Vim Plugins ###
-
-* Must init and update the git submodules to pull down the plugins
 
