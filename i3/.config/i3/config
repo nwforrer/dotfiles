@@ -179,9 +179,9 @@ bindsym $mod+Shift+u exec check-monitors.sh
 #bindsym XF86AudioNext exec playerctl next
 #bindsym XF86AudioPlay exec playerctl play-pause
 #
-#bindsym XF86AudioRaise exec amixer -q set Master 1%+
-#bindsym XF86AudioLower exec amixer -q set Master 1%-
-#bindsym XF86AudioMute exec amixer -q set Master toggle
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 1%+
+bindsym XF86AudioLowerVolume exec amixer -q set Master 1%-
+bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # startup apps
 exec --no-startup-id setxkbmap -layout us -variant dvp
@@ -192,10 +192,8 @@ exec --no-startup-id compton --config ~/.config/compton.conf
 
 exec --no-startup-id dunst -follow keyboard -geometry x5
 
-exec polybar main
-
 exec_always --no-startup-id $HOME/bin/check-monitors.sh 
-#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #exec_always --no-startup-id wal -i "$(< "$HOME/.cache/wal/wal")"
 #exec_always feh --bg-scale $HOME/Pictures/wallpaper/'Ascent (Final).png'
 exec_always feh --bg-scale $HOME/Pictures/wallpaper

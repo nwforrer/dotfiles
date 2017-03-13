@@ -72,11 +72,11 @@ font-4 = "Roboto:size=4;0"
 
 [bar/main]
 inherit = section/base
-monitor = DVI-I-1
+monitor = ${env:MONITOR1:DVI-I-1}
 
 [bar/secondary]
 inherit = section/base
-monitor = DVI-D-0
+monitor = ${env:MONITOR2:DVI-D-0}
 
 [module/xwindow]
 ;label-font = 3 

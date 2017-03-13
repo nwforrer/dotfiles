@@ -96,6 +96,10 @@ export HISTSIZE=-1
 # Sonar scanner
 export SONAR_SCANNER_HOME=$HOME/usr/local/src/sonar-scanner
 
+# Monitors for polybar config
+export MONITOR1=DVI-I-1
+export MONITOR2=DVI-D-0
+
 #-----------------------------------------------------------------------
 #  
 #                      COLORS FOR MAN PAGES 
