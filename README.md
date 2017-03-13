@@ -5,10 +5,21 @@ Dotfiles are managed using GNU Stow. Install a programs config files by executin
 
 ### Required applications for i3 config ###
 
-* compton
-* i3blocks
-* hsetroot
+* urxvt
 * rofi
+* polybar
+* fontawesome
+* tewi
+* siji
+* i3
+* i3lock-color-git
+* compton
+* feh
+
+## Vim ##
+
+Plugins are configured via Vundle. Set up Vundle:
+`$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 
 ### GTK Themes ###
 
