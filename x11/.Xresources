@@ -1,34 +1,49 @@
-! --------------------------------
-! URxvt settings
-! --------------------------------
-! Plugins
-URxvt.perl-ext-common: default,matcher,selection-to-clipboard
-
-! Clickable URLs
-URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.matcher.button: 1
-! Open URLs with keyboard
-URxvt.keysym.C-Delete: perl:matcher:last
-URxvt.keysym.M-Delete: perl:matcher:list
-
-URxvt*cursorColor:          #ffffff
-URxvt*scrollBar: off
-
 URxvt.font: xft:Hack:size=14
-!URxvt.font: xft:FontAwesome:pixelsize=11
 
-! Colored man pages
-URxvt.colorIT:              #cacaca
-URxvt.colorBD:              #ede265
-URxvt.colorUL:              #ffffff
+URxvt.scrollBar: false
+
+! Set terminal padding
+URxvt.internalBorder: 20
+
+! hard contrast: *background: #1d2021
+*background: #282828
+! soft contrast: *background: #32302f
+*foreground: #ebdbb2
+! Black + DarkGrey
+*color0:  #282828
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+! LightGrey + White
+*color7:  #a89984
+*color15: #ebdbb2
 
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
+! Enable the extended coloring options
 rofi.color-enabled: true
-rofi.color-window: #273238, #273238, #1e2529
-rofi.color-normal: #273238, #c1c1c1, #273238, #394249, #ffffff
-rofi.color-active: #273238, #80cbc4, #273238, #394249, #80cbc4
-rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
 
-#include ".colors/gruvbox-dark.xresources"
+!                  bg       border   separator
+rofi.color-window: #282828, #a89984, #a89984
+
+!                  bg       fg       bg-alt   hl-bg    hl-fg
+rofi.color-normal: #282828, #ebdbb2, #32302f, #665c54, #fbf1c7
+rofi.color-active: #d79921, #282828, #d79921, #fabd2f, #282828
+rofi.color-urgent: #cc241d, #282828, #cc241d, #fb4934, #282828
