@@ -6,7 +6,11 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 export VISUAL=vim
 export EDITOR=vim
 
-source /usr/share/git/completion/git-prompt.sh
+if [ -f /usr/share/git/completion/git-prompt.sh ]; then
+	. /usr/share/git/completion/git-prompt.sh
+elif [ -f ]; then
+	. /usr/share/git-core/contrib/completion/git-prompt.sh
+fi
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -97,8 +101,20 @@ export HISTSIZE=-1
 export SONAR_SCANNER_HOME=$HOME/usr/local/src/sonar-scanner
 
 # Monitors for polybar config
-export MONITOR1=DVI-I-1
-export MONITOR2=DVI-D-0
+hostname=$(</etc/hostname)
+if [ "$hostname" == "nforrer" ]; then
+	export MONITOR1=DP2-3
+	export MONITOR2=DP2-2
+elif [ "$hostname" == "archdesk" ]; then
+	export MONITOR1=DVI-I-1
+	export MONITOR2=DVI-D-0
+fi
+
+export PATH=$HOME/bin:$HOME/usr/local/bin:$PATH
+
+if [ -d $HOME/usr/local/src/node-v6.9.3-linux-x64/bin ]; then
+	export PATH=$HOME/usr/local/src/node-v6.9.3-linux-x64/bin:$PATH
+fi
 
 #-----------------------------------------------------------------------
 #  
