@@ -170,10 +170,10 @@ client.urgent #cc241d #cc241d #ebdbb2 #282828
 bindsym $mod+m move workspace to output right
 
 # lock (i3lock-color from AUR)
-bindsym $mod+Shift+q exec i3lock -i ~/Pictures/gruvbox.png -ks --textcolor=ebdbb2ff --blur 1 --datestr="" --timestr="%H:%M" --insidecolor=282828ff --ringcolor=d79921ff --keyhlcolor=fabd2fff --insidevercolor=458588ff --ringvercolor=83a598ff
+bindsym $mod+Shift+q exec $HOME/bin/lock.sh
 
-bindsym $mod+Shift+e exec undock-monitors.sh
-bindsym $mod+Shift+u exec check-monitors.sh
+bindsym $mod+Shift+e exec $HOME/bin/undock-monitors.sh
+bindsym $mod+Shift+u exec $HOME/bin/check-monitors.sh
 
 #bindsym XF86AudioPrev exec playerctl previous
 #bindsym XF86AudioNext exec playerctl next
@@ -182,6 +182,7 @@ bindsym $mod+Shift+u exec check-monitors.sh
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 1%+
 bindsym XF86AudioLowerVolume exec amixer -q set Master 1%-
 bindsym XF86AudioMute exec amixer -q set Master toggle
+
 
 # startup apps
 exec --no-startup-id setxkbmap -layout us -variant dvp
@@ -193,12 +194,11 @@ exec --no-startup-id compton --config ~/.config/compton.conf
 exec --no-startup-id dunst -follow keyboard -geometry x5
 
 exec_always --no-startup-id $HOME/bin/check-monitors.sh 
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-#exec_always --no-startup-id wal -i "$(< "$HOME/.cache/wal/wal")"
-#exec_always feh --bg-scale $HOME/Pictures/wallpaper/'Ascent (Final).png'
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always feh --bg-scale $HOME/Pictures/wallpaper
 
 exec --no-startup-id slack
+exec rocketchat
 exec --no-startup-id nm-applet
 
 exec --no-startup-id redshift -l 35.830204:-78.641439 -t 4500K:3500K
