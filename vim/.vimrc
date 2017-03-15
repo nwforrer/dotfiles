@@ -34,7 +34,7 @@ set backspace=indent,eol,start
                     " allow backspacing over everything in insert mode
 set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
-set number        " always show line numbers
+"set number        " always show line numbers
 set shiftwidth=4  " number of spaces to use for autoindenting
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set showmatch     " set show matching parenthesis
@@ -106,6 +106,9 @@ map <C-l> <C-w>l
 
 " Clear highlighted searches
 nmap <silent> ,/ :nohlsearch<CR>
+
+" Toggle line numbers
+nmap <silent> ,n :set number!<CR>
 
 " With "w!!" use sudo to save file if you forgot to open as root
 cmap w!! w !sudo tee % >/dev/null
