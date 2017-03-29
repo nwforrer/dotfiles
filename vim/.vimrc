@@ -14,6 +14,7 @@ Plugin 'scrooloose/nerdtree'	" File tree
 Plugin 'sheerun/vim-polyglot'	" Syntax
 Plugin 'morhetz/gruvbox'		" Colorscheme
 Plugin 'craigemery/vim-autotag'	" Auto-update ctags
+Plugin 'chrisbra/csv.vim'		" CSV file handling
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
