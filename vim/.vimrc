@@ -15,6 +15,7 @@ Plugin 'sheerun/vim-polyglot'	" Syntax
 Plugin 'morhetz/gruvbox'		" Colorscheme
 Plugin 'craigemery/vim-autotag'	" Auto-update ctags
 Plugin 'chrisbra/csv.vim'		" CSV file handling
+Plugin 'benmills/vimux'			" Run commands in tmux
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -27,7 +28,11 @@ let g:ctrlp_custom_ignore = {
 			\ 'dir': '\v[\/](target|\.git)$',
 			\ }
 
+let g:VimuxOrientation = "h"
+
 set hidden
+
+set background=dark
 
 set nowrap        " don't wrap lines
 set tabstop=4     " a tab is four spaces
@@ -91,6 +96,15 @@ map <C-n> :NERDTreeToggle<CR>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
+" Prompt for a command to run in tmux
+map <leader>vp :VimuxPromptCommand<CR>
+" Run last command executed by VimuxRunCommand
+map <leader>vl :VimuxRunLastCommand<CR>
+" Inspect runner pane
+map <leader>vi :VimuxInspectRunner<CR>
+" Zoom the tmux runner pane
+map <leader>vz :VimuxZoomRunner<CR>
+
 " Compilation
 nmap <C-m> :make<CR>
 nmap <C-x> :execute b:RunCmd<CR>
@@ -104,6 +118,9 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" vv to create a new vertical split
+nnoremap <silent> vv <C-w>v
 
 " Clear highlighted searches
 nmap <silent> ,/ :nohlsearch<CR>
