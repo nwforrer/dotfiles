@@ -73,7 +73,18 @@ PS1='\[\e[0;31m\]────── \[\e[0;32m\]\W\[\e[0m\] $(__git_ps1 "\[\e[0;
 
 alias ls='ls --color=auto'
 alias killsql='kill -9 `ps aux | grep sqldeveloper | grep classpath | cut --complement -c1-9 | cut -c1-5`'
-alias mutt='cd ~/Desktop && mutt'
+#alias mutt='cd ~/Desktop && mutt'
+alias events='gcalcli --calendar="nforrer@redhat.com" --detail_length --detail_location agenda 12am 11:59pm'
+
+alias ocopen='oc login https://open.paas.redhat.com:443'
+alias ocdev='oc login https://paas.dev.redhat.com:443'
+alias ocqa='oc login https://paas.qa.redhat.com:443'
+alias ocstage='oc login https://paas.stage.redhat.com:443'
+alias ocprod='oc login https://paas.redhat.com:443'
+
+export TODOTXT_DEFAULT_ACTION=ls
+alias t='todo.sh'
+complete -o bashdefault -o default -o nospace -F _todo t
 
 #-----------------------------------------------------------------------
 #                                           
@@ -116,6 +127,10 @@ if [ -d $HOME/usr/local/src/node-v6.9.3-linux-x64/bin ]; then
 	export PATH=$HOME/usr/local/src/node-v6.9.3-linux-x64/bin:$PATH
 fi
 
+if [ -d $HOME/usr/local/src/todo.txt ]; then
+	export PATH=$HOME/usr/local/src/todo.txt:$PATH
+fi
+
 #-----------------------------------------------------------------------
 #  
 #                      COLORS FOR MAN PAGES 
@@ -128,3 +143,7 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[0;34;36m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[0;35m'
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+[ -f ~/.tinycare.env ] && source ~/.tinycare.env
