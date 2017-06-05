@@ -193,17 +193,20 @@ exec --no-startup-id compton --config ~/.config/compton.conf
 
 exec --no-startup-id dunst -follow keyboard -geometry x5
 
+exec --no-startup-id $HOME/bin/gcalcli-reminders.sh
+
 exec_always --no-startup-id $HOME/bin/check-monitors.sh 
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always feh --bg-scale $HOME/Pictures/wallpaper
+exec_always feh --bg-scale $HOME/Pictures/gruvbox.png
 
 exec --no-startup-id slack
-exec rocketchat
+#exec rocketchat
 exec --no-startup-id nm-applet
 
 exec --no-startup-id redshift -l 35.830204:-78.641439 -t 4500K:3500K
 
 exec --no-startup-id SpiderOakBlue
 
-exec --no-startup-id urxvt -e vim -O ~/usr/doc/todo.txt ~/usr/doc/notes.txt
+exec --no-startup-id urxvt -e vim -O ~/usr/doc/todo.txt
 exec --no-startup-id urxvt -e weechat
+exec --no-startup-id urxvt -e mutt
