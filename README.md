@@ -21,6 +21,9 @@ Dotfiles are managed using GNU Stow. Install a programs config files by executin
 Plugins are configured via Vundle. Set up Vundle:
 `$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 
+To setup vim-fugitive:
+`$ vim -u NONE -c "helptags vim-fugitive/doc" -c q`
+
 ### GTK Themes ###
 
 * Arc darker theme
