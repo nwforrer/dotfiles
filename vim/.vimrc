@@ -138,6 +138,7 @@ map <leader>vz :VimuxZoomRunner<CR>
 " Compilation
 nmap <C-m> :make<CR>
 nmap <C-x> :execute b:RunCmd<CR>
+nmap <leader>g :!make && make run<CR>
 
 " Use Q for formatting the current paragraph or selection
 vmap Q gq
