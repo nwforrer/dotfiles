@@ -16,6 +16,7 @@ Plugin 'morhetz/gruvbox'		" Colorscheme
 Plugin 'craigemery/vim-autotag'	" Auto-update ctags
 Plugin 'chrisbra/csv.vim'		" CSV file handling
 Plugin 'benmills/vimux'			" Run commands in tmux
+Plugin 'tomtom/tcomment_vim'	" Comment out lines/regions
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -104,7 +105,14 @@ augroup encrypted
 	autocmd BufWritePost,FileWritePost *.gpg
 				\ silent u |
 				\ setlocal nobin
-augroup END
+augroup end
+
+augroup fugitive
+	au!
+
+	" Automatically open the quick-fix window when performing :Ggrep
+	autocmd QuickFixCmdPost *grep* cwindow
+augroup end
 
 "
 " functions
@@ -116,6 +124,9 @@ endfunction
 "
 " keybindings
 "
+
+" generate getter/setter for a Java variable
+map <leader>jgs $bmabyiwGO<CR>public <ESC>pa <ESC>mb'a$byiw'bAget<ESC>pb3l<C-v>UA() {<CR>return this.<ESC>pA;<CR>}<CR><CR>public void set<ESC>pb3l<C-v>UA(final <ESC>mb'a$bbyiw'b$pa <ESC>'a$byiw'b$pa) {<CR>this.<ESC>pA = <ESC>pA;<CR>}<ESC>'aj
 
 nnoremap ; :
 
