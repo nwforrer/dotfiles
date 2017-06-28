@@ -26,3 +26,6 @@
 
 ;; Disable the bell sound, and blink instead
 (setq visible-bell 1)
+
+;; MAGIT CONFIGURATION
+(global-set-key (kbd "C-x g") 'magit-status)
