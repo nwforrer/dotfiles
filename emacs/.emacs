@@ -1,3 +1,5 @@
+;; INSTALL PACKAGES
+;; --------------------------------------
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa-stable" . "https://stable.melpa.org/packages/") t)
@@ -7,25 +9,47 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
+(defvar myPackages
+  '(better-defaults
+    material-theme
+    elpy
+    projectile
+    magit))
+
+(mapc #'(lambda (package)
+	  (unless (package-installed-p package)
+	    (package-install package)))
+      myPackages)
+
+;; BASIC CUSTOMIZATION
+;;---------------------------------------
+
+(setq inhibit-startup-message t) ;; hide the startup message
+(load-theme 'material t) ;; load material theme
+(global-linum-mode t) ;; enable line numbers globally
+
+;; Disable the bell sound, and blink instead
+(setq visible-bell 1)
+
+;; Magit Status keybinding
+(global-set-key (kbd "C-x g") 'magit-status)
+
+;; Enable the elpy package (for Python)
+(elpy-enable)
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(custom-enabled-themes (quote (tango-dark)))
- '(package-selected-packages (quote (magit))))
+ '(package-selected-packages (quote (material-theme better-defaults projectile magit))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-;; Disable the bell sound, and blink instead
-(setq visible-bell 1)
-
-;; MAGIT CONFIGURATION
-(global-set-key (kbd "C-x g") 'magit-status)
