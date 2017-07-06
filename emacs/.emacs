@@ -14,12 +14,13 @@
 
 (defvar myPackages
   '(better-defaults
-    material-theme
+;    material-theme
+    gruvbox-theme
     elpy
     json-mode
     js2-mode
     projectile
-    yasnippet
+;    yasnippet
     magit))
 
 (mapc #'(lambda (package)
@@ -33,7 +34,7 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 (setq inhibit-startup-message t) ;; hide the startup message
-(load-theme 'material t) ;; load material theme
+(load-theme 'gruvbox t) ;; load material theme
 (global-linum-mode t) ;; enable line numbers globally
 
 ;; Disable the bell sound, and blink instead
@@ -59,27 +60,6 @@
 (require 'smart-tab)
 (global-smart-tab-mode 1)
 
-;; yasnippet
-(require 'yasnippet)
-(yas-global-mode 1)
-(global-set-key "\C-o" 'open-line-or-yas)
-(defun open-line-or-yas ()
-  (interactive)
-  (cond ((and (looking-back " ") (looking-at "[\s\n}]+"))
-     (insert "\n\n")
-     (indent-according-to-mode)
-     (previous-line)
-     (indent-according-to-mode))
-    ((expand-abbrev))
-    (t 
-     (setq *yas-invokation-point* (point))
-     (yas/next-field-or-maybe-expand-1))))
-(defun yas/next-field-or-maybe-expand-1 ()
-  (interactive)
-  (let ((yas/fallback-behavior 'return-nil))
-    (unless (yas/expand)
-      (yas/next-field))))
-
 ;; gnus
 (require 'nnir) ; enable searching across mail
 
@@ -90,7 +70,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yaml-mode pug-mode material-theme better-defaults projectile magit)))
+    (gruvbox-theme yaml-mode pug-mode better-defaults projectile magit)))
  '(python-shell-interpreter "python3")
  '(send-mail-function (quote smtpmail-send-it)))
 (custom-set-faces
