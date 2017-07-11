@@ -14,12 +14,12 @@
 
 (defvar myPackages
   '(better-defaults
-;    material-theme
     gruvbox-theme
     elpy
     json-mode
     js2-mode
     projectile
+    eclim
 ;    yasnippet
     magit))
 
@@ -63,14 +63,34 @@
 ;; gnus
 (require 'nnir) ; enable searching across mail
 
+;; JAVA
+(require 'eclim)
+(setq eclimd-autostart t)
+; show compilation errors in the echo area
+(setq help-at-pt-display-when-idle t)
+(setq help-at-pt-timer-delay 0.1)
+(help-at-pt-set-timer)
+; company-mode for pop-up auto completion
+(require 'company)
+(require 'company-emacs-eclim)
+(company-emacs-eclim-setup)
+(global-company-mode t)
+(defun my-java-mode-hook ()
+    (eclim-mode t))
+(add-hook 'java-mode-hook 'my-java-mode-hook)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(eclim-eclipse-dirs
+   (quote
+    ("~/usr/local/src/eclipse" "/Applications/eclipse" "/usr/lib/eclipse" "/usr/local/lib/eclipse" "/usr/share/eclipse" "/Applications/Eclipse.app/Contents/Eclipse/")))
+ '(eclim-executable "~/usr/local/src/eclipse/eclim")
  '(package-selected-packages
    (quote
-    (gruvbox-theme yaml-mode pug-mode better-defaults projectile magit)))
+    (flycheck eclim elpy js2-mode json-mode json-reformat json-snatcher gruvbox-theme yaml-mode pug-mode better-defaults projectile magit)))
  '(python-shell-interpreter "python3")
  '(send-mail-function (quote smtpmail-send-it)))
 (custom-set-faces
