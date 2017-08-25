@@ -3,8 +3,8 @@
 #
 
 export RANGER_LOAD_DEFAULT_RC=FALSE
-export VISUAL=vim
-export EDITOR=vim
+export VISUAL=emacs
+export EDITOR=emacs
 
 if [ -f /usr/share/git/completion/git-prompt.sh ]; then
 	. /usr/share/git/completion/git-prompt.sh
