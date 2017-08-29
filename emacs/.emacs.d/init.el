@@ -68,6 +68,7 @@
   "Time Emacs was started.")
 
 (add-to-list 'load-path "~/.emacs.d/mine/")
+(add-to-list 'load-path "~/.emacs.d/erc-extras/")
 
 (defmacro try-load (module)
   "Try to load the given module, logging an error if unable to load"

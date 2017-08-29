@@ -33,6 +33,7 @@
         eshell-smart-space-goes-to-end t)
   :config
   (defalias 'emacs 'find-file)
+  (defalias 'em 'find-file)
+  (defalias 'd 'dired)
   (defalias 'sec 'sudoec)
-  (setenv "PAGER" "cat")
-  )
+  (setenv "PAGER" "cat"))

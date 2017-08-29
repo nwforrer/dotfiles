@@ -157,6 +157,11 @@
   :ensure t
   :mode "\\.json\\'")
 
+;; Pug
+(use-package pug-mode
+  :ensure t
+  :mode "\\.pug\\'")
+
 ;; Shell scripting
 (add-to-list 'auto-mode-alist '("\\.zsh$" . shell-script-mode))
 

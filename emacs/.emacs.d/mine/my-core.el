@@ -33,8 +33,6 @@
   (menu-bar-mode -1))
 (when (functionp 'set-scroll-bar-mode)
   (set-scroll-bar-mode nil))
-(when (functionp 'mouse-wheel-mode)
-  (mouse-wheel-mode -1))
 (when (functionp 'tooltip-mode)
   (tooltip-mode -1))
 (when (functionp 'tool-bar-mode)
@@ -205,17 +203,13 @@ clearing it's contents first."
 (defhydra my/hydra nil
   "
 ╭────────────────────────────────────────────────────────╯
-  [_a_] Org Agenda       [_E_] ERC       [_m_] Mail
-  [_t_] Toggle map       [_T_] Twitter   [_M_] Music
-  [_s_] Skeletons        [_P_] Prodigy   [_g_] Gnus
-  [_p_] Proced           [_W_] Weather   [(] Macros
-  [_c_] Multi-compile    [_R_] RSS       [`] Errors
-  [_d_] Downloads        [_D_] Debbugs   [_C_] ES-CC
-  [_b_] Project's Eshell [_S_] Smerge    [_B_] Bookmarks
-  [_q_] quit
-"
+  [_E_] ERC       [_m_] Mail
+  [_R_] RSS       [_d_] Downloads
+  "
   ("A" my/hydra-about-emacs/body :exit t)
   ("E" (when (y-or-n-p "Really start ERC?") (start-erc)) :exit t)
+  ("m" (when (y-or-n-p "Really start mail?") (mu4e)) :exit t)
+  ("d" (dired "~/Downloads") :exit t)
   ("R" elfeed :exit t))
 
 ;; bind the main hydra menu to M-t

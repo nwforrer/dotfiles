@@ -10,12 +10,13 @@
           erc-fill-column 100
           erc-server-reconnect-timeout 5
           erc-server-reconnect-attempts 3
-          erc-autojoin-channels-alist '(("irc.devel.redhat.com" "#paas" "#iso")
+          erc-autojoin-channels-alist '(("irc.devel.redhat.com" "#paas" "#iso" "#bpm")
                                         ("irc.corp.redhat.com" "#iso" "#productivity")))
     (defun eos/disable-font-lock ()
       (font-lock-mode -1))
     ;; ERC is crazy, for some reason it doesn't like font-lock...
     (add-hook 'erc-mode-hook #'eos/disable-font-lock))
+    
   (use-package erc-hl-nicks :ensure t)
   (use-package ercn
     :ensure t
@@ -87,8 +88,11 @@
 
   (erc :server "irc.devel.redhat.com"
        :port 6667
-       :nick "nforrer")
+       :nick "nforrer"
+       :full-name "Nick Forrer")
   (erc-tls :server "irc.corp.redhat.com"
            :port 6667
            :nick "nforrer"
-           :password rhat-corp-pass))
+           :full-name "Nick Forrer"
+           :password irc-corp-pass))
+
