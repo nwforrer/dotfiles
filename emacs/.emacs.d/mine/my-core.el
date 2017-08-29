@@ -205,12 +205,14 @@ clearing it's contents first."
 ╭────────────────────────────────────────────────────────╯
   [_E_] ERC       [_m_] Mail
   [_R_] RSS       [_d_] Downloads
+  [_q_] quit
   "
   ("A" my/hydra-about-emacs/body :exit t)
   ("E" (when (y-or-n-p "Really start ERC?") (start-erc)) :exit t)
   ("m" (when (y-or-n-p "Really start mail?") (mu4e)) :exit t)
   ("d" (dired "~/Downloads") :exit t)
-  ("R" elfeed :exit t))
+  ("R" elfeed :exit t)
+  ("q" nil :exit t))
 
 ;; bind the main hydra menu to M-t
 (global-set-key (kbd "M-t") 'my/hydra/body)
