@@ -94,6 +94,7 @@
 (try-load 'my-mail)
 (try-load 'my-irc)
 (try-load 'my-rss)
+(try-load 'my-music)
 
 ;; hooks
 (add-hook 'after-my-hook

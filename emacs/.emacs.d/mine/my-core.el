@@ -204,12 +204,13 @@ clearing it's contents first."
   "
 ╭────────────────────────────────────────────────────────╯
   [_E_] ERC       [_m_] Mail
-  [_R_] RSS       [_d_] Downloads
-  [_q_] quit
+  [_R_] RSS       [_M_] Music
+  [_q_] quit      [_d_] Downloads
   "
   ("A" my/hydra-about-emacs/body :exit t)
   ("E" (when (y-or-n-p "Really start ERC?") (start-erc)) :exit t)
-  ("m" (when (y-or-n-p "Really start mail?") (mu4e)) :exit t)
+  ("m" (mu4e) :exit t)
+  ("M" my/hydra-mpd/body :exit t)
   ("d" (dired "~/Downloads") :exit t)
   ("R" elfeed :exit t)
   ("q" nil :exit t))

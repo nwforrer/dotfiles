@@ -3,3 +3,8 @@ vim/.vim/.netrwhist
 
 emacs/.erc/logs/*
 !emacs/.erc/logs/.gitkeep
+
+mpd/.config/mpd/*
+!mpd/.config/mpd/mpd.conf
+!mpd/.config/mpd/playlists/.gitkeep
+

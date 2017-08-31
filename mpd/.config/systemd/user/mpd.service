@@ -1,0 +1,13 @@
+[Unit]
+Description=Music Player Daemon
+Documentation=man:mpd(1) man:mpd.conf(5)
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/mpd --no-daemon
+ExecStop=/usr/bin/pkill mpd
+Environment=DISPLAY=:0
+Restart=always
+
+[Install]
+WantedBy=default.target
