@@ -205,12 +205,14 @@ clearing it's contents first."
 ╭────────────────────────────────────────────────────────╯
   [_E_] ERC       [_m_] Mail
   [_R_] RSS       [_M_] Music
-  [_q_] quit      [_d_] Downloads
+  [_n_] Notes     [_d_] Downloads
+  [_q_] quit
   "
   ("A" my/hydra-about-emacs/body :exit t)
   ("E" (when (y-or-n-p "Really start ERC?") (start-erc)) :exit t)
   ("m" (mu4e) :exit t)
   ("M" my/hydra-mpd/body :exit t)
+  ("n" (find-file "~/usr/doc/notes.org") :exit t)
   ("d" (dired "~/Downloads") :exit t)
   ("R" elfeed :exit t)
   ("q" nil :exit t))
