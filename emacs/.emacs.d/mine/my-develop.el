@@ -146,6 +146,11 @@
   (add-hook 'java-mode-hook #'my/use-java-docset)
   (add-hook 'emacs-lisp-mode-hook #'my/use-elisp-docset))
 
+;; automatically detect indent style of file
+(use-package dtrt-indent
+  :ensure t
+  :config
+  (dtrt-indent-mode t))
 
 ;; Javascript
 (setq-default js-indent-level 2)
@@ -165,4 +170,9 @@
 ;; Shell scripting
 (add-to-list 'auto-mode-alist '("\\.zsh$" . shell-script-mode))
 
-
+;; Common Lisp
+(use-package slime
+  :ensure t
+  :config
+  (setq inferior-lisp-program (executable-find "clisp"))
+  (setq slime-contribs '(slime-fancy)))
