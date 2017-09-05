@@ -16,6 +16,9 @@
   ;; mu4e as the default Emacs mail client
   (setq mail-user-agent 'mu4e-user-agent)
 
+  ;; save attachments to the downloads directory
+  (setq mu4e-attachment-dir "~/Downloads")
+
   (setq mu4e-drafts-folder "/drafts")
   (setq mu4e-sent-folder "/sent")
   (setq mu4e-trash-folder "/trash")
@@ -27,10 +30,13 @@
   ;; switch to the inbox -- press ji
   ;; archive messages -- ma
   (setq mu4e-maildir-shortcuts
-        '( ("/INBOX"    . ?i)
-           ("/sent"     . ?s)
-           ("/trash"    . ?t)
-           ("/archive"  . ?a)))
+        '( ("/INBOX"       . ?i)
+           ("/sent"        . ?s)
+           ("/trash"       . ?t)
+           ("/archive"     . ?a)
+           ("/memo-list"   . ?m)
+           ("/rdu-list"    . ?r)
+           ("/friday-list" . ?f)))
 
   ;; update mail using 'U' in the main view
   (setq mu4e-get-mail-command "offlineimap"
