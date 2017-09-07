@@ -9,6 +9,12 @@
     (add-hook 'shell-mode-hook 'with-editor-export-editor)
     (add-hook 'eshell-mode-hook 'with-editor-export-editor)))
 
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (when (memq window-system '(mac ns x))
+    (exec-path-from-shell-initialize)))
+
 (defun my/setup-eshell ()
   (interactive)
   (local-set-key (kbd "M-P") 'eshell-previous-prompt)
