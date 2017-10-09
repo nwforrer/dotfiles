@@ -109,8 +109,6 @@
     nil))
 (add-hook 'electric-indent-functions 'electric-indent-ignore-mode)
 
-(electric-layout-mode 1)
-
 ;; add highlighting for FIXME, TODO, NOCOMMIT
 (defun my/add-watchwords ()
   "Highlight FIXME, TODO, and NOCOMMIT in code TODO"
@@ -154,10 +152,10 @@
 
 ;; Javascript
 (setq-default js-indent-level 2)
-(use-package js2-mode
-  :ensure t
-  :mode "\\.js\\'"
-  :config (js2-imenu-extras-setup))
+;; (use-package js2-mode
+;;   :ensure t
+;;   :mode "\\.js\\'"
+;;   :config (js2-imenu-extras-setup))
 (use-package json-mode
   :ensure t
   :mode "\\.json\\'")
@@ -176,3 +174,16 @@
   :config
   (setq inferior-lisp-program (executable-find "clisp"))
   (setq slime-contribs '(slime-fancy)))
+
+;; Clojure
+(use-package clojure-mode
+  :ensure t)
+(use-package cider
+  :ensure t)
+(use-package projectile
+  :ensure t)
+
+(use-package rainbow-delimiters
+  :ensure t)
+
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
