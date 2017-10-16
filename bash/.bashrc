@@ -100,9 +100,9 @@ function cdl() {
 #                          VARIABLES
 #-----------------------------------------------------------------------
 # Virtual Env Wrapper
-export WORKON_HOME=~/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-source /usr/bin/virtualenvwrapper.sh
+# export WORKON_HOME=~/.virtualenvs
+# export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+# source /usr/bin/virtualenvwrapper.sh
 
 # Unlimited bash history
 export HISTFILESIZE=-1
