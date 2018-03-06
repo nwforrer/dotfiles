@@ -99,11 +99,11 @@ format-padding = 2
 ;label-separator = |
 
 menu-0-0 =  shutdown  
-menu-0-0-exec = systemctl poweroff
+menu-0-0-exec = sudo poweroff
 menu-0-1 =  reboot  
-menu-0-1-exec = systemctl reboot
+menu-0-1-exec = sudo reboot
 menu-0-2 =  logout  
-menu-0-2-exec = bspc quit
+menu-0-2-exec = i3msg exit
 menu-0-3 =  suspend  
 menu-0-3-exec = i3lock -i /home/nforrer/Pictures/gruvbox.png && systemctl suspend
 menu-0-4 =  cancel  
