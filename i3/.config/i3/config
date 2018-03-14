@@ -153,12 +153,24 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+set $display_changer Display: [d]ocked, [u]ndocked, [h]dmi extend
+mode "$display_changer" {
+     bindsym d exec $HOME/bin/dock-monitors.sh
+     bindsym u exec $HOME/bin/undock-monitors.sh
+     bindsym h exec $HOME/bin/extend-hdmi-display.sh
+
+     # back to normal: Enter or Escape
+     bindsym Return mode "default"
+     bindsym Escape mode "default"
+}
+bindsym $mod+c mode "$display_changer"
+
 # screen lock
 bindsym $mod+Shift+x exec $HOME/bin/lock.sh
 
 # monitors
 bindsym $mod+Shift+u exec $HOME/bin/undock-monitors.sh
-bindsym $mod+Shift+d exec $HOME/bin/check-monitors.sh
+bindsym $mod+Shift+d exec $HOME/bin/dock-monitors.sh
 
 # alsa controls
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 1%+
@@ -179,11 +191,12 @@ bindsym XF86AudioPrev exec playerctl previous
 exec_always setxkbmap -layout us -option ctrl:swapcaps
 exec_always ~/.fehbg
 
-exec dunst
+# exec dunst
 exec slack
 exec urxvt -e weechat
 exec nm-applet
 exec redshift-gtk
 exec SpiderOakGroups
 exec emacs
-exec ~/.config/polybar/launch.sh
+
+exec ~/bin/check-monitors.sh
