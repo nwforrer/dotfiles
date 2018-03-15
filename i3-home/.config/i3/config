@@ -175,8 +175,8 @@ bindsym XF86AudioPrev exec playerctl previous
 exec_always setxkbmap -layout us -option ctrl:swapcaps
 exec_always ~/.fehbg
 
-# exec dunst
-exec urxvt -e weechat
+exec MONITOR1=LVDS polybar main
+
 exec nm-applet
 exec redshift-gtk
 exec emacs
