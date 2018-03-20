@@ -175,8 +175,11 @@ bindsym XF86AudioPrev exec playerctl previous
 exec_always setxkbmap -layout us -option ctrl:swapcaps
 exec_always ~/.fehbg
 
-exec MONITOR1=LVDS polybar main
+exec ~/.screenlayout/default.sh
+exec_always MONITOR1=DVI-D-0 polybar main
+exec_always MONITOR2=DP-0 polybar secondary
 
+exec numlockx
 exec nm-applet
 exec redshift-gtk
 exec emacs
