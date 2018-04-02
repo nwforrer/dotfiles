@@ -187,16 +187,23 @@ bindsym XF86AudioPrev exec playerctl previous
 #         status_command i3status
 # }
 
+## assign apps to specific workspaces
+assign [class="Emacs"] 1
+assign [class="Slack"] 2
+assign [class="URxvt" instance="weechat"] 2
+assign [class="Firefox"] 3
+
 # autostart apps
 exec_always setxkbmap -layout us -option ctrl:swapcaps
 exec_always ~/.fehbg
 
 # exec dunst
 exec slack
-exec urxvt -e weechat
+exec urxvt -name weechat -e weechat
 exec nm-applet
 exec redshift-gtk
 exec SpiderOakGroups
 exec emacs
+exec firefox
 
 exec ~/bin/check-monitors.sh
