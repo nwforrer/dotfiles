@@ -59,7 +59,7 @@ hostname=$(</etc/hostname)
 if [ "$hostname" == "nforrer" ]; then
 	  export MONITOR1=DP-2-2
 	  export MONITOR2=DP-2-3
-elif [ "$hostname" == "archdesk" ]; then
+elif [ "$hostname" == "DESKTOP-C7QU56E" ]; then
 	  export MONITOR1=DVI-I-1
 	  export MONITOR2=DVI-D-0
 fi

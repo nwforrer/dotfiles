@@ -171,13 +171,17 @@ bindsym XF86AudioPrev exec playerctl previous
 #         status_command i3status
 # }
 
+## assign apps to specific workspaces
+assign [class="Emacs"] 1
+assign [class="URxvt" instance="weechat"] 2
+assign [class="Firefox"] 3
+
 # autostart apps
 exec_always setxkbmap -layout us -option ctrl:swapcaps
 exec_always ~/.fehbg
 
-exec ~/.screenlayout/default.sh
-exec_always MONITOR1=DVI-D-0 polybar main
-exec_always MONITOR2=DP-0 polybar secondary
+exec_always ~/.screenlayout/default.sh
+exec_always MONITOR1=DVI-D-0 MONITOR2=DP-0 ~/.config/polybar/launch.sh
 
 exec numlockx
 exec nm-applet
