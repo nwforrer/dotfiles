@@ -197,6 +197,9 @@ assign [class="Firefox"] 3
 exec_always setxkbmap -layout us -option ctrl:swapcaps
 exec_always ~/.fehbg
 
+# manually start pulse audio to workaround a sound issue in firefox (https://support.mozilla.org/en-US/kb/no-sound-firefox-59-linux)
+exec pulseaudio --start --exit-idle-time=-1
+
 # exec dunst
 exec slack
 exec urxvt -name weechat -e weechat
