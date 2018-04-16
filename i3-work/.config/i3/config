@@ -169,8 +169,8 @@ bindsym $mod+c mode "$display_changer"
 bindsym $mod+Shift+x exec $HOME/bin/lock.sh
 
 # monitors
-bindsym $mod+Shift+u exec $HOME/bin/undock-monitors.sh
-bindsym $mod+Shift+d exec $HOME/bin/dock-monitors.sh
+bindsym $mod+Shift+u exec $HOME/bin/check-monitors.sh
+bindsym $mod+Shift+d exec $HOME/bin/check-monitors.sh
 
 # alsa controls
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 1%+
