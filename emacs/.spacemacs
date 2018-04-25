@@ -47,8 +47,8 @@ values."
      javascript
      python
      (java :variables
-           eclim-eclipse-dirs "~/usr/local/src/eclipse"
-           eclim-executable "~/usr/local/src/eclipse/eclim")
+           eclim-eclipse-dirs "~/usr/local/eclipse"
+           eclim-executable "~/usr/local/eclipse/eclimd")
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
