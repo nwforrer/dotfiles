@@ -197,6 +197,8 @@ assign [class="Firefox"] 3
 exec_always setxkbmap -layout us -option ctrl:swapcaps
 exec_always ~/.fehbg
 
+exec_always numlockx
+
 # manually start pulse audio to workaround a sound issue in firefox (https://support.mozilla.org/en-US/kb/no-sound-firefox-59-linux)
 exec pulseaudio --start --exit-idle-time=-1
 
