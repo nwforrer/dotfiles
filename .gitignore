@@ -12,3 +12,5 @@ mpd/.config/mpd/*
 /emacs/.emacs.d/elpa/
 /emacs/.emacs.d/projectile-bookmarks.eld
 /emacs/.emacs.d/auto-save-list/
+/fonts/.fonts/.uuid
+/emacs/.emacs.d/bookmarks
