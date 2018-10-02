@@ -19,7 +19,7 @@
 (add-hook 'emacs-startup-hook
 	  (lambda ()
 	    (split-window-right)
-	    (org-todo-list)))
+	    (org-agenda)))
 
 ;; custom functions
 (defun duplicate-line()
@@ -38,8 +38,6 @@
       (package-install 'use-package)))
 (require 'use-package)
 
-(setq use-package-compute-statistics t)
-
 ;; set some global variables
 (setq backup-directory-alist
       `(("." . ,(concat user-emacs-directory "backups"))))
@@ -52,9 +50,9 @@
 (add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-tail-mode))
 
 ;; include quicklisp slime helper
-;; (load (expand-file-name "~/quicklisp/slime-helper.el"))
-;; (setq inferior-lisp-program "sbcl")
-;; (setq slime-contribs '(slime-fancy))
+(load (expand-file-name "~/quicklisp/slime-helper.el"))
+(setq inferior-lisp-program "sbcl")
+(setq slime-contribs '(slime-fancy))
 
 ;; install theme
 (setq *my-theme* 'spacemacs)
@@ -78,10 +76,28 @@
 ;; install packages
 (use-package org
   :defer t
+  :bind (("C-c c" . org-capture)
+	 ("C-c a" . org-agenda))
   :config
-  (setq org-startup-indented t
-	org-directory "~/usr/doc"
-	org-agenda-files '("~/usr/doc")))
+  (setq org-directory "~/usr/gtd"
+	org-agenda-files '("~/usr/gtd/inbox.org"
+			   "~/usr/gtd/gtd.org"
+			   "~/usr/gtd/tickler.org"))
+  (setq org-capture-templates '(("t" "Todo [inbox]" entry
+				 (file+headline "~/usr/gtd/inbox.org" "Tasks")
+				 "* TODO %i%?")
+				("T" "Tickler" entry
+				 (file+headline "~/usr/gtd/tickler.org" "Tickler")
+				 "* %i%? \n %U")))
+  (setq org-refile-targets '(("~/usr/gtd/gtd.org" :maxlevel . 3)
+			     ("~/usr/gtd/someday.org" :level . 1)
+			     ("~/usr/gtd/tickler.org" :maxlevel . 2)))
+
+  (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+
+  (setq org-agenda-custom-commands '(("o" "At the office" tags-todo "@office"
+				      ((org-agenda-overriding-header "Office"))))))
+
 (use-package smart-tab
   :config
   (global-smart-tab-mode 1))
@@ -106,6 +122,11 @@
   :config
   (setq podcaster-feeds-urls '("https://pinecast.com/feed/emacscast")
 	podcaster-mp3-player "ffplay"))
+(use-package elfeed
+  :bind (("C-x w" . elfeed))
+  :config
+  (setq elfeed-feeds '(("http://pragmaticemacs.com/feed/" blog emacs)
+		       ("https://www.xkcd.com/rss.xml" comics))))
 ;;; various language modes
 (use-package js2-mode
   :defer t
@@ -163,10 +184,13 @@
   :demand
   (helm-mode 1))
 (use-package projectile
+  :demand t
   :config
   (projectile-mode))
 (use-package helm-projectile
   :after (helm projectile)
+  :bind (("C-c p p" . helm-projectile-switch-project)
+	 ("C-c p h" . helm-projectile-find-file))
   :config
   (helm-projectile-on))
 
@@ -178,7 +202,7 @@
  '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(package-selected-packages
    (quote
-    (which-key spaceline spacemacs-theme podcaster smart-tab paredit slime company-mode nasm-mode csv-mode restclient pug-mode realgud autodisass-java-bytecode meghanada dockerfile-mode markdown-mode helm-projectile ng2-mode helm js2-mode gruvbox-theme use-package))))
+    (org-capture elfeed which-key spaceline spacemacs-theme podcaster smart-tab paredit slime company-mode nasm-mode csv-mode restclient pug-mode realgud autodisass-java-bytecode meghanada dockerfile-mode markdown-mode helm-projectile ng2-mode helm js2-mode gruvbox-theme use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
