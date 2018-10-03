@@ -14,3 +14,6 @@ mpd/.config/mpd/*
 /emacs/.emacs.d/auto-save-list/
 /fonts/.fonts/.uuid
 /emacs/.emacs.d/bookmarks
+/emacs/.emacs.d/.org-id-locations
+/emacs/.emacs.d/url/
+/emacs/.emacs.d/meghanada/
