@@ -43,6 +43,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'sainnhe/sonokai'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
 
 " search
 Plug 'ctrlpvim/ctrlp.vim'
@@ -61,6 +62,15 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'styled-components/vim-styled-components', {'branch': 'main' }
 Plug 'sheerun/vim-polyglot'
 
+" debugging
+Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
+
+" building
+Plug 'cdelledonne/vim-cmake'
+
+" java
+Plug 'artur-shaik/vim-javacomplete2'
+
 call plug#end()
 
 let g:ctrlp_working_path_mode = 0
@@ -76,9 +86,11 @@ if (has('termguicolors'))
 	set termguicolors
 endif
 
-let g:sonokai_style = 'shusia'
-let g:airline_theme = 'sonokai'
-colorscheme sonokai
+"let g:sonokai_style = 'shusia'
+"let g:airline_theme = 'sonokai'
+"colorscheme sonokai
+let g:gruvbox_italic=1
+autocmd vimenter * ++nested colorscheme gruvbox
 
 "
 " autocommands
@@ -89,6 +101,22 @@ augroup filetype_rust
 	autocmd FileType rust setlocal makeprg=cargo\ build
 	autocmd FileType rust let b:RunCmd="!cargo\ run"
 augroup end
+
+"
+" java configuration
+"
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+
+nmap <F5> <Plug>(JavaComplete-Imports-Add)
+imap <F5> <Plug>(JavaComplete-Imports-Add)
+
+nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+
+nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 
 "
 " keybindings
@@ -106,6 +134,7 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " coc
+let g:coc_disable_startup_warning = 1
 nmap <silent> <leader>gd <Plug>(coc-definition)
 nmap <silent> <leader>gr <Plug>(coc-references)
 nmap <silent> <leader>gi <Plug>(coc-implementation)

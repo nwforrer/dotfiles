@@ -1,5 +1,7 @@
 vim/.vim/bundle/
 vim/.vim/.netrwhist
+neovim/.config/nvim/plugged/
+neovim/.config/nvim/.netrwhist
 
 emacs/.erc/logs/*
 !emacs/.erc/logs/.gitkeep
