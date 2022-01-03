@@ -75,7 +75,7 @@ call plug#end()
 
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_custom_ignore = {
-			\ 'dir': '\v[\/](target|\.git)$',
+			\ 'dir': '\v[\/](target|\.git|zig-cache)$',
 			\ }
 
 
@@ -101,6 +101,8 @@ augroup filetype_rust
 	autocmd FileType rust setlocal makeprg=cargo\ build
 	autocmd FileType rust let b:RunCmd="!cargo\ run"
 augroup end
+
+autocmd! BufNewFile,BufRead *.vert,*.frag set ft=glsl
 
 "
 " java configuration
@@ -140,3 +142,4 @@ nmap <silent> <leader>gr <Plug>(coc-references)
 nmap <silent> <leader>gi <Plug>(coc-implementation)
 nmap <silent> <leader>gy <Plug>(coc-type-definition)
 nmap <silent> <leader>rn <Plug>(coc-rename)
+nnoremap <silent><nowait> <leader>o :<C-u>CocList outline<cr>
